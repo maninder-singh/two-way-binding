@@ -16,6 +16,10 @@ TwoWayBinding.prototype.attachEvent = function () {
     });
 };
 
+TwoWayBinding.prototype.get = function (key) {
+    return this.elms[key];
+};
+
 TwoWayBinding.prototype.set = function (key,value) {
     if(this.elms.hasOwnProperty(key)){
         this.elms[key].value = value;
