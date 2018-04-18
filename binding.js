@@ -1,6 +1,5 @@
 function TwoWayBinding() {
     this.elms = parseDOM(document.body.children,{});
-
     this.attachEvent();
 }
 
@@ -17,7 +16,9 @@ TwoWayBinding.prototype.attachEvent = function () {
 };
 
 TwoWayBinding.prototype.get = function (key) {
-    return this.elms[key];
+    if(this.elms.hasOwnProperty(key)){
+        return this.elms[key].value;
+    }
 };
 
 TwoWayBinding.prototype.set = function (key,value) {
